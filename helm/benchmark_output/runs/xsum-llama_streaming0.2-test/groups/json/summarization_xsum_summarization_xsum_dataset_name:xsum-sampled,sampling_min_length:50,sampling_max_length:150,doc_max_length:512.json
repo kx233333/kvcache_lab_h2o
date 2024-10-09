@@ -1,0 +1,376 @@
+{
+  "title": "dataset_name: xsum-sampled, sampling_min_length: 50, sampling_max_length: 150, doc_max_length: 512",
+  "header": [
+    {
+      "value": "Model/adapter",
+      "markdown": false,
+      "metadata": {}
+    },
+    {
+      "value": "ROUGE-2",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nROUGE-2: Average ROUGE score [(Lin, 2004)](https://aclanthology.org/W04-1013/) based on 2-gram overlap.",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "ROUGE-2",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "SummaC",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nSummaC: Faithfulness scores based on the SummaC method of [Laban et al. (2022)](https://aclanthology.org/2022.tacl-1.10/).",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "SummaC",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "QAFactEval",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nQAFactEval: Faithfulness scores based on the SummaC method of [Laban et al. (2022)](https://aclanthology.org/2022.tacl-1.10/).",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "QAFactEval",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "BERTScore (F1)",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nBERTScore (F1): Average BERTScore F1 [(Zhang et al., 2020)](https://openreview.net/pdf?id=SkeHuCVFDr) between model generation and reference summary.",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "BERTScore (F1)",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "Coverage",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nCoverage: Extent to which the model-generated summaries are extractive fragments from the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+      "markdown": false,
+      "metadata": {
+        "metric": "Coverage",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "Density",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nDensity: Extent to which the model-generated summaries are extractive summaries based on the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+      "markdown": false,
+      "metadata": {
+        "metric": "Density",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "Compression",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nCompression: Extent to which the model-generated summaries are compressed relative to the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+      "markdown": false,
+      "metadata": {
+        "metric": "Compression",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "HumanEval-faithfulness",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nHumanEval-faithfulness: Human evaluation score for faithfulness.",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "HumanEval-faithfulness",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "HumanEval-relevance",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nHumanEval-relevance: Human evaluation score for relevance.",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "HumanEval-relevance",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "HumanEval-coherence",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nHumanEval-coherence: Human evaluation score for coherence.",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "HumanEval-coherence",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "Stereotypes (race)",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nStereotypical associations (race, profession): Measures uneven association of racial groups (Asian, Hispanic, White) with target professions. This measurement is based on cooccurence statistics between the racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+      "markdown": false,
+      "lower_is_better": true,
+      "metadata": {
+        "metric": "Stereotypes (race)",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "Stereotypes (gender)",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nStereotypical associations (gender, profession): Measures uneven association of gender groups (male, female) with target professions. This measurement is based on cooccurence statistics between the gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+      "markdown": false,
+      "lower_is_better": true,
+      "metadata": {
+        "metric": "Stereotypes (gender)",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "Representation (race)",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nDemographic representation (race): Measures uneven representation of racial groups (Asian, Hispanic, White). This measurement is based on disparities in the frequency statistics across racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics).",
+      "markdown": false,
+      "lower_is_better": true,
+      "metadata": {
+        "metric": "Representation (race)",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "Representation (gender)",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nDemographic representation (gender): Measures uneven representation of gender groups (male, female). This measurement is based on disparities in the frequency statistics across gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+      "markdown": false,
+      "lower_is_better": true,
+      "metadata": {
+        "metric": "Representation (gender)",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "Toxic fraction",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nToxic fraction: Fraction of model outputs that are toxic (based on the PerspectiveAPI toxicity classifier).",
+      "markdown": false,
+      "lower_is_better": true,
+      "metadata": {
+        "metric": "Toxic fraction",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "Denoised inference time (s)",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+      "markdown": false,
+      "lower_is_better": true,
+      "metadata": {
+        "metric": "Denoised inference time (s)",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "# eval",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\n# eval: Number of evaluation instances.",
+      "markdown": false,
+      "metadata": {
+        "metric": "# eval",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "# train",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\n# train: Number of training instances (e.g., in-context examples).",
+      "markdown": false,
+      "metadata": {
+        "metric": "# train",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "truncated",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+      "markdown": false,
+      "metadata": {
+        "metric": "truncated",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "# prompt tokens",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\n# prompt tokens: Number of tokens in the prompt.",
+      "markdown": false,
+      "metadata": {
+        "metric": "# prompt tokens",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "# output tokens",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\n# output tokens: Actual number of output tokens.",
+      "markdown": false,
+      "metadata": {
+        "metric": "# output tokens",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "# trials",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+      "markdown": false,
+      "metadata": {
+        "metric": "# trials",
+        "run_group": "XSUM"
+      }
+    }
+  ],
+  "rows": [
+    [
+      {
+        "value": "GPT-NeoX (20B)",
+        "description": "",
+        "href": "?group=summarization_xsum&subgroup=dataset_name%3A%20xsum-sampled%2C%20sampling_min_length%3A%2050%2C%20sampling_max_length%3A%20150%2C%20doc_max_length%3A%20512&runSpecs=%5B%22summarization_xsum%3Atemperature%3D0.3%2Cdevice%3Dcpu%2Cmodel%3Dtogether_gpt-neox-20b%22%5D",
+        "markdown": false
+      },
+      {
+        "value": 0.12144214323317198,
+        "description": "min=0.121, mean=0.121, max=0.121, sum=0.121 (1)",
+        "style": {
+          "font-weight": "bold"
+        },
+        "markdown": false
+      },
+      {
+        "description": "1 matching runs, but no matching metrics",
+        "markdown": false
+      },
+      {
+        "value": 4.559661149978638,
+        "description": "min=4.56, mean=4.56, max=4.56, sum=4.56 (1)",
+        "style": {
+          "font-weight": "bold"
+        },
+        "markdown": false
+      },
+      {
+        "description": "1 matching runs, but no matching metrics",
+        "markdown": false
+      },
+      {
+        "value": 0.7123119893944874,
+        "description": "min=0.712, mean=0.712, max=0.712, sum=0.712 (1)",
+        "style": {},
+        "markdown": false
+      },
+      {
+        "value": 2.813702887761816,
+        "description": "min=2.814, mean=2.814, max=2.814, sum=2.814 (1)",
+        "style": {},
+        "markdown": false
+      },
+      {
+        "value": 14.879250413711285,
+        "description": "min=14.879, mean=14.879, max=14.879, sum=14.879 (1)",
+        "style": {},
+        "markdown": false
+      },
+      {
+        "description": "1 matching runs, but no matching metrics",
+        "markdown": false
+      },
+      {
+        "description": "1 matching runs, but no matching metrics",
+        "markdown": false
+      },
+      {
+        "description": "1 matching runs, but no matching metrics",
+        "markdown": false
+      },
+      {
+        "value": 0.6666666666666667,
+        "description": "min=0.667, mean=0.667, max=0.667, sum=0.667 (1)",
+        "style": {
+          "font-weight": "bold"
+        },
+        "markdown": false
+      },
+      {
+        "value": 0.4523809523809524,
+        "description": "min=0.452, mean=0.452, max=0.452, sum=0.452 (1)",
+        "style": {
+          "font-weight": "bold"
+        },
+        "markdown": false
+      },
+      {
+        "value": 0.6666666666666667,
+        "description": "min=0.667, mean=0.667, max=0.667, sum=0.667 (1)",
+        "style": {
+          "font-weight": "bold"
+        },
+        "markdown": false
+      },
+      {
+        "value": 0.21889400921658986,
+        "description": "min=0.219, mean=0.219, max=0.219, sum=0.219 (1)",
+        "style": {
+          "font-weight": "bold"
+        },
+        "markdown": false
+      },
+      {
+        "description": "1 matching runs, but no matching metrics",
+        "markdown": false
+      },
+      {
+        "value": 0.0,
+        "description": "min=0, mean=0, max=0, sum=0 (1)",
+        "style": {
+          "font-weight": "bold"
+        },
+        "markdown": false
+      },
+      {
+        "value": 518.0,
+        "description": "min=518, mean=518, max=518, sum=518 (1)",
+        "style": {},
+        "markdown": false
+      },
+      {
+        "value": 4.996138996138996,
+        "description": "min=4.996, mean=4.996, max=4.996, sum=4.996 (1)",
+        "style": {},
+        "markdown": false
+      },
+      {
+        "value": 0.0,
+        "description": "min=0, mean=0, max=0, sum=0 (1)",
+        "style": {},
+        "markdown": false
+      },
+      {
+        "value": 1574.142857142857,
+        "description": "min=1574.143, mean=1574.143, max=1574.143, sum=1574.143 (1)",
+        "style": {},
+        "markdown": false
+      },
+      {
+        "value": 1.0,
+        "description": "min=1, mean=1, max=1, sum=1 (1)",
+        "style": {},
+        "markdown": false
+      },
+      {
+        "value": 1.0,
+        "description": "min=1, mean=1, max=1, sum=1 (1)",
+        "style": {},
+        "markdown": false
+      }
+    ]
+  ],
+  "links": [
+    {
+      "text": "LaTeX",
+      "href": "benchmark_output/runs/xsum-llama_streaming0.2-test/groups/latex/summarization_xsum_summarization_xsum_dataset_name:xsum-sampled,sampling_min_length:50,sampling_max_length:150,doc_max_length:512.tex"
+    },
+    {
+      "text": "JSON",
+      "href": "benchmark_output/runs/xsum-llama_streaming0.2-test/groups/json/summarization_xsum_summarization_xsum_dataset_name:xsum-sampled,sampling_min_length:50,sampling_max_length:150,doc_max_length:512.json"
+    }
+  ],
+  "name": "summarization_xsum_dataset_name:xsum-sampled,sampling_min_length:50,sampling_max_length:150,doc_max_length:512"
+}

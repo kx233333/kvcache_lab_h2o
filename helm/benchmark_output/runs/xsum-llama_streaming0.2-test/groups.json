@@ -1,0 +1,334 @@
+[
+  {
+    "title": "All scenarios",
+    "header": [
+      {
+        "value": "Group",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Description",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Adaptation method",
+        "description": "Adaptation strategy (e.g., generation)",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# instances",
+        "description": "Number of instances evaluated on",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# references",
+        "description": "Number of references provided per instance",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# prompt tokens",
+        "description": "Total number of prompt tokens",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# completion tokens",
+        "description": "Total number of completion tokens",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# models",
+        "description": "Number of models we're evaluating",
+        "markdown": false,
+        "metadata": {}
+      }
+    ],
+    "rows": [
+      [
+        {
+          "value": "Core scenarios",
+          "href": "?group=core_scenarios",
+          "markdown": false
+        },
+        {
+          "value": "The scenarios where we evaluate all the models.",
+          "markdown": true
+        },
+        {
+          "value": "generation",
+          "markdown": false
+        },
+        {
+          "value": 500.0,
+          "description": "min=482, mean=500, max=518, sum=1000 (2)",
+          "markdown": false
+        },
+        {
+          "value": 1.0,
+          "description": "min=1, mean=1, max=1, sum=6 (6)",
+          "markdown": false
+        },
+        {
+          "value": 9507.042679312388,
+          "description": "min=1574.143, mean=1584.507, max=1594.871, sum=9507.043 (6)",
+          "markdown": false
+        },
+        {
+          "value": 6.0,
+          "description": "min=1, mean=1, max=1, sum=6 (6)",
+          "markdown": false
+        },
+        {
+          "value": 1,
+          "markdown": false
+        }
+      ]
+    ],
+    "links": []
+  },
+  {
+    "title": "Core scenarios",
+    "header": [
+      {
+        "value": "Group",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Description",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Adaptation method",
+        "description": "Adaptation strategy (e.g., generation)",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# instances",
+        "description": "Number of instances evaluated on",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# references",
+        "description": "Number of references provided per instance",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# prompt tokens",
+        "description": "Total number of prompt tokens",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# completion tokens",
+        "description": "Total number of completion tokens",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# models",
+        "description": "Number of models we're evaluating",
+        "markdown": false,
+        "metadata": {}
+      }
+    ],
+    "rows": [
+      [
+        {
+          "value": "Summarization",
+          "href": "?group=summarization",
+          "markdown": false
+        },
+        {
+          "value": "In text summarization, given a piece of text (paragraph or document), the goal is to produce a much shorter summary.",
+          "markdown": true
+        },
+        {
+          "value": "generation",
+          "markdown": false
+        },
+        {
+          "value": 500.0,
+          "description": "min=482, mean=500, max=518, sum=1000 (2)",
+          "markdown": false
+        },
+        {
+          "value": 1.0,
+          "description": "min=1, mean=1, max=1, sum=6 (6)",
+          "markdown": false
+        },
+        {
+          "value": 9507.042679312388,
+          "description": "min=1574.143, mean=1584.507, max=1594.871, sum=9507.043 (6)",
+          "markdown": false
+        },
+        {
+          "value": 6.0,
+          "description": "min=1, mean=1, max=1, sum=6 (6)",
+          "markdown": false
+        },
+        {
+          "value": 1,
+          "markdown": false
+        }
+      ]
+    ],
+    "links": []
+  },
+  {
+    "title": "Targeted evaluations",
+    "header": [
+      {
+        "value": "Group",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Description",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Adaptation method",
+        "description": "Adaptation strategy (e.g., generation)",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# instances",
+        "description": "Number of instances evaluated on",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# references",
+        "description": "Number of references provided per instance",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# prompt tokens",
+        "description": "Total number of prompt tokens",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# completion tokens",
+        "description": "Total number of completion tokens",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# models",
+        "description": "Number of models we're evaluating",
+        "markdown": false,
+        "metadata": {}
+      }
+    ],
+    "rows": [],
+    "links": []
+  },
+  {
+    "title": "Scenarios",
+    "header": [
+      {
+        "value": "Group",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Description",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Adaptation method",
+        "description": "Adaptation strategy (e.g., generation)",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# instances",
+        "description": "Number of instances evaluated on",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# references",
+        "description": "Number of references provided per instance",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# prompt tokens",
+        "description": "Total number of prompt tokens",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# completion tokens",
+        "description": "Total number of completion tokens",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "# models",
+        "description": "Number of models we're evaluating",
+        "markdown": false,
+        "metadata": {}
+      }
+    ],
+    "rows": [
+      [
+        {
+          "value": "XSUM",
+          "href": "?group=summarization_xsum",
+          "markdown": false
+        },
+        {
+          "value": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).",
+          "markdown": true
+        },
+        {
+          "value": "generation",
+          "markdown": false
+        },
+        {
+          "value": 500.0,
+          "description": "min=482, mean=500, max=518, sum=1000 (2)",
+          "markdown": false
+        },
+        {
+          "value": 1.0,
+          "description": "min=1, mean=1, max=1, sum=6 (6)",
+          "markdown": false
+        },
+        {
+          "value": 9507.042679312388,
+          "description": "min=1574.143, mean=1584.507, max=1594.871, sum=9507.043 (6)",
+          "markdown": false
+        },
+        {
+          "value": 6.0,
+          "description": "min=1, mean=1, max=1, sum=6 (6)",
+          "markdown": false
+        },
+        {
+          "value": 1,
+          "markdown": false
+        }
+      ]
+    ],
+    "links": []
+  }
+]

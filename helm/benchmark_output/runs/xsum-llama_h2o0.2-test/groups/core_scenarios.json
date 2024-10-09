@@ -1,0 +1,3778 @@
+[
+  {
+    "title": "Accuracy",
+    "header": [
+      {
+        "value": "Model/adapter",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Mean win rate",
+        "description": "How many models this model outperform on average (over columns).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {}
+      },
+      {
+        "value": "MMLU - EM",
+        "description": "The Massive Multitask Language Understanding (MMLU) benchmark for knowledge-intensive question answering across 57 domains [(Hendrycks et al., 2021)](https://openreview.net/forum?id=d7KBjmI3GmQ).\n\nExact match: Fraction of instances that the predicted output matches a correct reference exactly.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "MMLU"
+        }
+      },
+      {
+        "value": "BoolQ - EM",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\nQuasi-exact match: Fraction of instances that the predicted output matches a correct reference up to light processing.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "NarrativeQA - F1",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\nF1: Average F1 score in terms of word overlap between the model output and correct reference.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "F1",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - F1",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\nF1: Average F1 score in terms of word overlap between the model output and correct reference.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "F1",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - F1",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\nF1: Average F1 score in terms of word overlap between the model output and correct reference.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "F1",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "QuAC - F1",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\nF1: Average F1 score in terms of word overlap between the model output and correct reference.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "F1",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "HellaSwag - EM",
+        "description": "The HellaSwag benchmark for commonsense reasoning in question answering [(Zellers et al., 2019)](https://aclanthology.org/P19-1472/).\n\nExact match: Fraction of instances that the predicted output matches a correct reference exactly.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "HellaSwag"
+        }
+      },
+      {
+        "value": "OpenbookQA - EM",
+        "description": "The OpenbookQA benchmark for commonsense-intensive open book question answering [(Mihaylov et al., 2018)](https://aclanthology.org/D18-1260/).\n\nExact match: Fraction of instances that the predicted output matches a correct reference exactly.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "OpenbookQA"
+        }
+      },
+      {
+        "value": "TruthfulQA - EM",
+        "description": "The TruthfulQA benchmarking for measuring model truthfulness and commonsense knowledge in question answering [(Lin et al., 2022)](https://aclanthology.org/2022.acl-long.229/).\n\nExact match: Fraction of instances that the predicted output matches a correct reference exactly.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "TruthfulQA"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - RR@10",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\nRR@10: Mean reciprocal rank at 10 in information retrieval.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "RR@10",
+          "run_group": "MS MARCO (regular)"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - NDCG@10",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\nNDCG@10: Normalized discounted cumulative gain at 10 in information retrieval.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "NDCG@10",
+          "run_group": "MS MARCO (TREC)"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - ROUGE-2",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nROUGE-2: Average ROUGE score [(Lin, 2004)](https://aclanthology.org/W04-1013/) based on 2-gram overlap.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "ROUGE-2",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "XSUM - ROUGE-2",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nROUGE-2: Average ROUGE score [(Lin, 2004)](https://aclanthology.org/W04-1013/) based on 2-gram overlap.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "ROUGE-2",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "IMDB - EM",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\nQuasi-exact match: Fraction of instances that the predicted output matches a correct reference up to light processing.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "CivilComments - EM",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\nQuasi-exact match: Fraction of instances that the predicted output matches a correct reference up to light processing.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "RAFT - EM",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\nQuasi-exact match: Fraction of instances that the predicted output matches a correct reference up to light processing.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "RAFT"
+        }
+      }
+    ],
+    "rows": [
+      [
+        {
+          "value": "GPT-NeoX (20B)",
+          "description": "",
+          "markdown": false
+        },
+        {
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "value": 0.11355510412410938,
+          "description": "min=0.114, mean=0.114, max=0.114, sum=0.114 (1)",
+          "style": {
+            "font-weight": "bold"
+          },
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        }
+      ]
+    ],
+    "links": [
+      {
+        "text": "LaTeX",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/latex/core_scenarios_accuracy.tex"
+      },
+      {
+        "text": "JSON",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/json/core_scenarios_accuracy.json"
+      }
+    ],
+    "name": "accuracy"
+  },
+  {
+    "title": "Calibration",
+    "header": [
+      {
+        "value": "Model/adapter",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Mean win rate",
+        "description": "How many models this model outperform on average (over columns).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {}
+      },
+      {
+        "value": "MMLU - ECE (10-bin)",
+        "description": "The Massive Multitask Language Understanding (MMLU) benchmark for knowledge-intensive question answering across 57 domains [(Hendrycks et al., 2021)](https://openreview.net/forum?id=d7KBjmI3GmQ).\n\n10-bin expected calibration error: The average difference between the model's confidence and accuracy, averaged across 10 bins where each bin contains an equal number of points (only computed for classification tasks). Warning - not reliable for small datasets (e.g., with < 300 examples) because each bin will have very few examples.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "ECE (10-bin)",
+          "run_group": "MMLU"
+        }
+      },
+      {
+        "value": "BoolQ - ECE (10-bin)",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\n10-bin expected calibration error: The average difference between the model's confidence and accuracy, averaged across 10 bins where each bin contains an equal number of points (only computed for classification tasks). Warning - not reliable for small datasets (e.g., with < 300 examples) because each bin will have very few examples.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "ECE (10-bin)",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "NarrativeQA - ECE (10-bin)",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\n10-bin expected calibration error: The average difference between the model's confidence and accuracy, averaged across 10 bins where each bin contains an equal number of points (only computed for classification tasks). Warning - not reliable for small datasets (e.g., with < 300 examples) because each bin will have very few examples.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "ECE (10-bin)",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - ECE (10-bin)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\n10-bin expected calibration error: The average difference between the model's confidence and accuracy, averaged across 10 bins where each bin contains an equal number of points (only computed for classification tasks). Warning - not reliable for small datasets (e.g., with < 300 examples) because each bin will have very few examples.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "ECE (10-bin)",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - ECE (10-bin)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\n10-bin expected calibration error: The average difference between the model's confidence and accuracy, averaged across 10 bins where each bin contains an equal number of points (only computed for classification tasks). Warning - not reliable for small datasets (e.g., with < 300 examples) because each bin will have very few examples.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "ECE (10-bin)",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "QuAC - ECE (10-bin)",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\n10-bin expected calibration error: The average difference between the model's confidence and accuracy, averaged across 10 bins where each bin contains an equal number of points (only computed for classification tasks). Warning - not reliable for small datasets (e.g., with < 300 examples) because each bin will have very few examples.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "ECE (10-bin)",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "HellaSwag - ECE (10-bin)",
+        "description": "The HellaSwag benchmark for commonsense reasoning in question answering [(Zellers et al., 2019)](https://aclanthology.org/P19-1472/).\n\n10-bin expected calibration error: The average difference between the model's confidence and accuracy, averaged across 10 bins where each bin contains an equal number of points (only computed for classification tasks). Warning - not reliable for small datasets (e.g., with < 300 examples) because each bin will have very few examples.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "ECE (10-bin)",
+          "run_group": "HellaSwag"
+        }
+      },
+      {
+        "value": "OpenbookQA - ECE (10-bin)",
+        "description": "The OpenbookQA benchmark for commonsense-intensive open book question answering [(Mihaylov et al., 2018)](https://aclanthology.org/D18-1260/).\n\n10-bin expected calibration error: The average difference between the model's confidence and accuracy, averaged across 10 bins where each bin contains an equal number of points (only computed for classification tasks). Warning - not reliable for small datasets (e.g., with < 300 examples) because each bin will have very few examples.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "ECE (10-bin)",
+          "run_group": "OpenbookQA"
+        }
+      },
+      {
+        "value": "TruthfulQA - ECE (10-bin)",
+        "description": "The TruthfulQA benchmarking for measuring model truthfulness and commonsense knowledge in question answering [(Lin et al., 2022)](https://aclanthology.org/2022.acl-long.229/).\n\n10-bin expected calibration error: The average difference between the model's confidence and accuracy, averaged across 10 bins where each bin contains an equal number of points (only computed for classification tasks). Warning - not reliable for small datasets (e.g., with < 300 examples) because each bin will have very few examples.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "ECE (10-bin)",
+          "run_group": "TruthfulQA"
+        }
+      },
+      {
+        "value": "IMDB - ECE (10-bin)",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\n10-bin expected calibration error: The average difference between the model's confidence and accuracy, averaged across 10 bins where each bin contains an equal number of points (only computed for classification tasks). Warning - not reliable for small datasets (e.g., with < 300 examples) because each bin will have very few examples.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "ECE (10-bin)",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "CivilComments - ECE (10-bin)",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\n10-bin expected calibration error: The average difference between the model's confidence and accuracy, averaged across 10 bins where each bin contains an equal number of points (only computed for classification tasks). Warning - not reliable for small datasets (e.g., with < 300 examples) because each bin will have very few examples.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "ECE (10-bin)",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "RAFT - ECE (10-bin)",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\n10-bin expected calibration error: The average difference between the model's confidence and accuracy, averaged across 10 bins where each bin contains an equal number of points (only computed for classification tasks). Warning - not reliable for small datasets (e.g., with < 300 examples) because each bin will have very few examples.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "ECE (10-bin)",
+          "run_group": "RAFT"
+        }
+      }
+    ],
+    "rows": [
+      [
+        {
+          "value": "GPT-NeoX (20B)",
+          "description": "",
+          "markdown": false
+        },
+        {
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        }
+      ]
+    ],
+    "links": [
+      {
+        "text": "LaTeX",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/latex/core_scenarios_calibration.tex"
+      },
+      {
+        "text": "JSON",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/json/core_scenarios_calibration.json"
+      }
+    ],
+    "name": "calibration"
+  },
+  {
+    "title": "Robustness",
+    "header": [
+      {
+        "value": "Model/adapter",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Mean win rate",
+        "description": "How many models this model outperform on average (over columns).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {}
+      },
+      {
+        "value": "MMLU - EM (Robustness)",
+        "description": "The Massive Multitask Language Understanding (MMLU) benchmark for knowledge-intensive question answering across 57 domains [(Hendrycks et al., 2021)](https://openreview.net/forum?id=d7KBjmI3GmQ).\n\nExact match: Fraction of instances that the predicted output matches a correct reference exactly.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "MMLU",
+          "perturbation": "Robustness"
+        }
+      },
+      {
+        "value": "BoolQ - EM (Robustness)",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\nQuasi-exact match: Fraction of instances that the predicted output matches a correct reference up to light processing.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "BoolQ",
+          "perturbation": "Robustness"
+        }
+      },
+      {
+        "value": "NarrativeQA - F1 (Robustness)",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\nF1: Average F1 score in terms of word overlap between the model output and correct reference.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "F1",
+          "run_group": "NarrativeQA",
+          "perturbation": "Robustness"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - F1 (Robustness)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\nF1: Average F1 score in terms of word overlap between the model output and correct reference.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "F1",
+          "run_group": "NaturalQuestions (closed-book)",
+          "perturbation": "Robustness"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - F1 (Robustness)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\nF1: Average F1 score in terms of word overlap between the model output and correct reference.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "F1",
+          "run_group": "NaturalQuestions (open-book)",
+          "perturbation": "Robustness"
+        }
+      },
+      {
+        "value": "QuAC - F1 (Robustness)",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\nF1: Average F1 score in terms of word overlap between the model output and correct reference.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "F1",
+          "run_group": "QuAC",
+          "perturbation": "Robustness"
+        }
+      },
+      {
+        "value": "HellaSwag - EM (Robustness)",
+        "description": "The HellaSwag benchmark for commonsense reasoning in question answering [(Zellers et al., 2019)](https://aclanthology.org/P19-1472/).\n\nExact match: Fraction of instances that the predicted output matches a correct reference exactly.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "HellaSwag",
+          "perturbation": "Robustness"
+        }
+      },
+      {
+        "value": "OpenbookQA - EM (Robustness)",
+        "description": "The OpenbookQA benchmark for commonsense-intensive open book question answering [(Mihaylov et al., 2018)](https://aclanthology.org/D18-1260/).\n\nExact match: Fraction of instances that the predicted output matches a correct reference exactly.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "OpenbookQA",
+          "perturbation": "Robustness"
+        }
+      },
+      {
+        "value": "TruthfulQA - EM (Robustness)",
+        "description": "The TruthfulQA benchmarking for measuring model truthfulness and commonsense knowledge in question answering [(Lin et al., 2022)](https://aclanthology.org/2022.acl-long.229/).\n\nExact match: Fraction of instances that the predicted output matches a correct reference exactly.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "TruthfulQA",
+          "perturbation": "Robustness"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - RR@10 (Robustness)",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\nRR@10: Mean reciprocal rank at 10 in information retrieval.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "RR@10",
+          "run_group": "MS MARCO (regular)",
+          "perturbation": "Robustness"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - NDCG@10 (Robustness)",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\nNDCG@10: Normalized discounted cumulative gain at 10 in information retrieval.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "NDCG@10",
+          "run_group": "MS MARCO (TREC)",
+          "perturbation": "Robustness"
+        }
+      },
+      {
+        "value": "IMDB - EM (Robustness)",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\nQuasi-exact match: Fraction of instances that the predicted output matches a correct reference up to light processing.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "IMDB",
+          "perturbation": "Robustness"
+        }
+      },
+      {
+        "value": "CivilComments - EM (Robustness)",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\nQuasi-exact match: Fraction of instances that the predicted output matches a correct reference up to light processing.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "CivilComments",
+          "perturbation": "Robustness"
+        }
+      },
+      {
+        "value": "RAFT - EM (Robustness)",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\nQuasi-exact match: Fraction of instances that the predicted output matches a correct reference up to light processing.\n- Perturbation Robustness: Computes worst case over different robustness perturbations (misspellings, formatting, contrast sets).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "RAFT",
+          "perturbation": "Robustness"
+        }
+      }
+    ],
+    "rows": [
+      [
+        {
+          "value": "GPT-NeoX (20B)",
+          "description": "",
+          "markdown": false
+        },
+        {
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        }
+      ]
+    ],
+    "links": [
+      {
+        "text": "LaTeX",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/latex/core_scenarios_robustness.tex"
+      },
+      {
+        "text": "JSON",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/json/core_scenarios_robustness.json"
+      }
+    ],
+    "name": "robustness"
+  },
+  {
+    "title": "Fairness",
+    "header": [
+      {
+        "value": "Model/adapter",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Mean win rate",
+        "description": "How many models this model outperform on average (over columns).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {}
+      },
+      {
+        "value": "MMLU - EM (Fairness)",
+        "description": "The Massive Multitask Language Understanding (MMLU) benchmark for knowledge-intensive question answering across 57 domains [(Hendrycks et al., 2021)](https://openreview.net/forum?id=d7KBjmI3GmQ).\n\nExact match: Fraction of instances that the predicted output matches a correct reference exactly.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "MMLU",
+          "perturbation": "Fairness"
+        }
+      },
+      {
+        "value": "BoolQ - EM (Fairness)",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\nQuasi-exact match: Fraction of instances that the predicted output matches a correct reference up to light processing.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "BoolQ",
+          "perturbation": "Fairness"
+        }
+      },
+      {
+        "value": "NarrativeQA - F1 (Fairness)",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\nF1: Average F1 score in terms of word overlap between the model output and correct reference.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "F1",
+          "run_group": "NarrativeQA",
+          "perturbation": "Fairness"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - F1 (Fairness)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\nF1: Average F1 score in terms of word overlap between the model output and correct reference.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "F1",
+          "run_group": "NaturalQuestions (closed-book)",
+          "perturbation": "Fairness"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - F1 (Fairness)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\nF1: Average F1 score in terms of word overlap between the model output and correct reference.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "F1",
+          "run_group": "NaturalQuestions (open-book)",
+          "perturbation": "Fairness"
+        }
+      },
+      {
+        "value": "QuAC - F1 (Fairness)",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\nF1: Average F1 score in terms of word overlap between the model output and correct reference.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "F1",
+          "run_group": "QuAC",
+          "perturbation": "Fairness"
+        }
+      },
+      {
+        "value": "HellaSwag - EM (Fairness)",
+        "description": "The HellaSwag benchmark for commonsense reasoning in question answering [(Zellers et al., 2019)](https://aclanthology.org/P19-1472/).\n\nExact match: Fraction of instances that the predicted output matches a correct reference exactly.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "HellaSwag",
+          "perturbation": "Fairness"
+        }
+      },
+      {
+        "value": "OpenbookQA - EM (Fairness)",
+        "description": "The OpenbookQA benchmark for commonsense-intensive open book question answering [(Mihaylov et al., 2018)](https://aclanthology.org/D18-1260/).\n\nExact match: Fraction of instances that the predicted output matches a correct reference exactly.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "OpenbookQA",
+          "perturbation": "Fairness"
+        }
+      },
+      {
+        "value": "TruthfulQA - EM (Fairness)",
+        "description": "The TruthfulQA benchmarking for measuring model truthfulness and commonsense knowledge in question answering [(Lin et al., 2022)](https://aclanthology.org/2022.acl-long.229/).\n\nExact match: Fraction of instances that the predicted output matches a correct reference exactly.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "TruthfulQA",
+          "perturbation": "Fairness"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - RR@10 (Fairness)",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\nRR@10: Mean reciprocal rank at 10 in information retrieval.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "RR@10",
+          "run_group": "MS MARCO (regular)",
+          "perturbation": "Fairness"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - NDCG@10 (Fairness)",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\nNDCG@10: Normalized discounted cumulative gain at 10 in information retrieval.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "NDCG@10",
+          "run_group": "MS MARCO (TREC)",
+          "perturbation": "Fairness"
+        }
+      },
+      {
+        "value": "IMDB - EM (Fairness)",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\nQuasi-exact match: Fraction of instances that the predicted output matches a correct reference up to light processing.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "IMDB",
+          "perturbation": "Fairness"
+        }
+      },
+      {
+        "value": "CivilComments - EM (Fairness)",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\nQuasi-exact match: Fraction of instances that the predicted output matches a correct reference up to light processing.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "CivilComments",
+          "perturbation": "Fairness"
+        }
+      },
+      {
+        "value": "RAFT - EM (Fairness)",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\nQuasi-exact match: Fraction of instances that the predicted output matches a correct reference up to light processing.\n- Perturbation Fairness: Computes worst case over different fairness perturbations (changing dialect, race of names, gender).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "EM",
+          "run_group": "RAFT",
+          "perturbation": "Fairness"
+        }
+      }
+    ],
+    "rows": [
+      [
+        {
+          "value": "GPT-NeoX (20B)",
+          "description": "",
+          "markdown": false
+        },
+        {
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        }
+      ]
+    ],
+    "links": [
+      {
+        "text": "LaTeX",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/latex/core_scenarios_fairness.tex"
+      },
+      {
+        "text": "JSON",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/json/core_scenarios_fairness.json"
+      }
+    ],
+    "name": "fairness"
+  },
+  {
+    "title": "Efficiency",
+    "header": [
+      {
+        "value": "Model/adapter",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Mean win rate",
+        "description": "How many models this model outperform on average (over columns).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {}
+      },
+      {
+        "value": "MMLU - Denoised inference time (s)",
+        "description": "The Massive Multitask Language Understanding (MMLU) benchmark for knowledge-intensive question answering across 57 domains [(Hendrycks et al., 2021)](https://openreview.net/forum?id=d7KBjmI3GmQ).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "MMLU"
+        }
+      },
+      {
+        "value": "BoolQ - Denoised inference time (s)",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "NarrativeQA - Denoised inference time (s)",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - Denoised inference time (s)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - Denoised inference time (s)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "QuAC - Denoised inference time (s)",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "HellaSwag - Denoised inference time (s)",
+        "description": "The HellaSwag benchmark for commonsense reasoning in question answering [(Zellers et al., 2019)](https://aclanthology.org/P19-1472/).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "HellaSwag"
+        }
+      },
+      {
+        "value": "OpenbookQA - Denoised inference time (s)",
+        "description": "The OpenbookQA benchmark for commonsense-intensive open book question answering [(Mihaylov et al., 2018)](https://aclanthology.org/D18-1260/).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "OpenbookQA"
+        }
+      },
+      {
+        "value": "TruthfulQA - Denoised inference time (s)",
+        "description": "The TruthfulQA benchmarking for measuring model truthfulness and commonsense knowledge in question answering [(Lin et al., 2022)](https://aclanthology.org/2022.acl-long.229/).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "TruthfulQA"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - Denoised inference time (s)",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "MS MARCO (regular)"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - Denoised inference time (s)",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "MS MARCO (TREC)"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - Denoised inference time (s)",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "XSUM - Denoised inference time (s)",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "IMDB - Denoised inference time (s)",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "CivilComments - Denoised inference time (s)",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "RAFT - Denoised inference time (s)",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\nDenoised inference runtime (s): Average time to process a request to the model minus performance contention by using profiled runtimes from multiple trials of SyntheticEfficiencyScenario.",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Denoised inference time (s)",
+          "run_group": "RAFT"
+        }
+      }
+    ],
+    "rows": [
+      [
+        {
+          "value": "GPT-NeoX (20B)",
+          "description": "",
+          "markdown": false
+        },
+        {
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "value": 0.0,
+          "description": "min=0, mean=0, max=0, sum=0 (1)",
+          "style": {
+            "font-weight": "bold"
+          },
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        }
+      ]
+    ],
+    "links": [
+      {
+        "text": "LaTeX",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/latex/core_scenarios_efficiency.tex"
+      },
+      {
+        "text": "JSON",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/json/core_scenarios_efficiency.json"
+      }
+    ],
+    "name": "efficiency"
+  },
+  {
+    "title": "General information",
+    "header": [
+      {
+        "value": "Model/adapter",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Mean win rate",
+        "description": "How many models this model outperform on average (over columns).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {}
+      },
+      {
+        "value": "MMLU - # eval",
+        "description": "The Massive Multitask Language Understanding (MMLU) benchmark for knowledge-intensive question answering across 57 domains [(Hendrycks et al., 2021)](https://openreview.net/forum?id=d7KBjmI3GmQ).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "MMLU"
+        }
+      },
+      {
+        "value": "MMLU - # train",
+        "description": "The Massive Multitask Language Understanding (MMLU) benchmark for knowledge-intensive question answering across 57 domains [(Hendrycks et al., 2021)](https://openreview.net/forum?id=d7KBjmI3GmQ).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "MMLU"
+        }
+      },
+      {
+        "value": "MMLU - truncated",
+        "description": "The Massive Multitask Language Understanding (MMLU) benchmark for knowledge-intensive question answering across 57 domains [(Hendrycks et al., 2021)](https://openreview.net/forum?id=d7KBjmI3GmQ).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "MMLU"
+        }
+      },
+      {
+        "value": "MMLU - # prompt tokens",
+        "description": "The Massive Multitask Language Understanding (MMLU) benchmark for knowledge-intensive question answering across 57 domains [(Hendrycks et al., 2021)](https://openreview.net/forum?id=d7KBjmI3GmQ).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "MMLU"
+        }
+      },
+      {
+        "value": "MMLU - # output tokens",
+        "description": "The Massive Multitask Language Understanding (MMLU) benchmark for knowledge-intensive question answering across 57 domains [(Hendrycks et al., 2021)](https://openreview.net/forum?id=d7KBjmI3GmQ).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "MMLU"
+        }
+      },
+      {
+        "value": "MMLU - # trials",
+        "description": "The Massive Multitask Language Understanding (MMLU) benchmark for knowledge-intensive question answering across 57 domains [(Hendrycks et al., 2021)](https://openreview.net/forum?id=d7KBjmI3GmQ).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "MMLU"
+        }
+      },
+      {
+        "value": "BoolQ - # eval",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "BoolQ - # train",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "BoolQ - truncated",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "BoolQ - # prompt tokens",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "BoolQ - # output tokens",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "BoolQ - # trials",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "NarrativeQA - # eval",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NarrativeQA - # train",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NarrativeQA - truncated",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NarrativeQA - # prompt tokens",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NarrativeQA - # output tokens",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NarrativeQA - # trials",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - # eval",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - # train",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - truncated",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - # prompt tokens",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - # output tokens",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - # trials",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - # eval",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - # train",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - truncated",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - # prompt tokens",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - # output tokens",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - # trials",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "QuAC - # eval",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "QuAC - # train",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "QuAC - truncated",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "QuAC - # prompt tokens",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "QuAC - # output tokens",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "QuAC - # trials",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "HellaSwag - # eval",
+        "description": "The HellaSwag benchmark for commonsense reasoning in question answering [(Zellers et al., 2019)](https://aclanthology.org/P19-1472/).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "HellaSwag"
+        }
+      },
+      {
+        "value": "HellaSwag - # train",
+        "description": "The HellaSwag benchmark for commonsense reasoning in question answering [(Zellers et al., 2019)](https://aclanthology.org/P19-1472/).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "HellaSwag"
+        }
+      },
+      {
+        "value": "HellaSwag - truncated",
+        "description": "The HellaSwag benchmark for commonsense reasoning in question answering [(Zellers et al., 2019)](https://aclanthology.org/P19-1472/).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "HellaSwag"
+        }
+      },
+      {
+        "value": "HellaSwag - # prompt tokens",
+        "description": "The HellaSwag benchmark for commonsense reasoning in question answering [(Zellers et al., 2019)](https://aclanthology.org/P19-1472/).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "HellaSwag"
+        }
+      },
+      {
+        "value": "HellaSwag - # output tokens",
+        "description": "The HellaSwag benchmark for commonsense reasoning in question answering [(Zellers et al., 2019)](https://aclanthology.org/P19-1472/).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "HellaSwag"
+        }
+      },
+      {
+        "value": "HellaSwag - # trials",
+        "description": "The HellaSwag benchmark for commonsense reasoning in question answering [(Zellers et al., 2019)](https://aclanthology.org/P19-1472/).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "HellaSwag"
+        }
+      },
+      {
+        "value": "OpenbookQA - # eval",
+        "description": "The OpenbookQA benchmark for commonsense-intensive open book question answering [(Mihaylov et al., 2018)](https://aclanthology.org/D18-1260/).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "OpenbookQA"
+        }
+      },
+      {
+        "value": "OpenbookQA - # train",
+        "description": "The OpenbookQA benchmark for commonsense-intensive open book question answering [(Mihaylov et al., 2018)](https://aclanthology.org/D18-1260/).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "OpenbookQA"
+        }
+      },
+      {
+        "value": "OpenbookQA - truncated",
+        "description": "The OpenbookQA benchmark for commonsense-intensive open book question answering [(Mihaylov et al., 2018)](https://aclanthology.org/D18-1260/).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "OpenbookQA"
+        }
+      },
+      {
+        "value": "OpenbookQA - # prompt tokens",
+        "description": "The OpenbookQA benchmark for commonsense-intensive open book question answering [(Mihaylov et al., 2018)](https://aclanthology.org/D18-1260/).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "OpenbookQA"
+        }
+      },
+      {
+        "value": "OpenbookQA - # output tokens",
+        "description": "The OpenbookQA benchmark for commonsense-intensive open book question answering [(Mihaylov et al., 2018)](https://aclanthology.org/D18-1260/).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "OpenbookQA"
+        }
+      },
+      {
+        "value": "OpenbookQA - # trials",
+        "description": "The OpenbookQA benchmark for commonsense-intensive open book question answering [(Mihaylov et al., 2018)](https://aclanthology.org/D18-1260/).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "OpenbookQA"
+        }
+      },
+      {
+        "value": "TruthfulQA - # eval",
+        "description": "The TruthfulQA benchmarking for measuring model truthfulness and commonsense knowledge in question answering [(Lin et al., 2022)](https://aclanthology.org/2022.acl-long.229/).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "TruthfulQA"
+        }
+      },
+      {
+        "value": "TruthfulQA - # train",
+        "description": "The TruthfulQA benchmarking for measuring model truthfulness and commonsense knowledge in question answering [(Lin et al., 2022)](https://aclanthology.org/2022.acl-long.229/).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "TruthfulQA"
+        }
+      },
+      {
+        "value": "TruthfulQA - truncated",
+        "description": "The TruthfulQA benchmarking for measuring model truthfulness and commonsense knowledge in question answering [(Lin et al., 2022)](https://aclanthology.org/2022.acl-long.229/).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "TruthfulQA"
+        }
+      },
+      {
+        "value": "TruthfulQA - # prompt tokens",
+        "description": "The TruthfulQA benchmarking for measuring model truthfulness and commonsense knowledge in question answering [(Lin et al., 2022)](https://aclanthology.org/2022.acl-long.229/).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "TruthfulQA"
+        }
+      },
+      {
+        "value": "TruthfulQA - # output tokens",
+        "description": "The TruthfulQA benchmarking for measuring model truthfulness and commonsense knowledge in question answering [(Lin et al., 2022)](https://aclanthology.org/2022.acl-long.229/).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "TruthfulQA"
+        }
+      },
+      {
+        "value": "TruthfulQA - # trials",
+        "description": "The TruthfulQA benchmarking for measuring model truthfulness and commonsense knowledge in question answering [(Lin et al., 2022)](https://aclanthology.org/2022.acl-long.229/).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "TruthfulQA"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - # eval",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "MS MARCO (regular)"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - # train",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "MS MARCO (regular)"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - truncated",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "MS MARCO (regular)"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - # prompt tokens",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "MS MARCO (regular)"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - # output tokens",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "MS MARCO (regular)"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - # trials",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "MS MARCO (regular)"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - # eval",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "MS MARCO (TREC)"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - # train",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "MS MARCO (TREC)"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - truncated",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "MS MARCO (TREC)"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - # prompt tokens",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "MS MARCO (TREC)"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - # output tokens",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "MS MARCO (TREC)"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - # trials",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "MS MARCO (TREC)"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - # eval",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - # train",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - truncated",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - # prompt tokens",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - # output tokens",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - # trials",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "XSUM - # eval",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - # train",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - truncated",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - # prompt tokens",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - # output tokens",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - # trials",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "IMDB - # eval",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "IMDB - # train",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "IMDB - truncated",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "IMDB - # prompt tokens",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "IMDB - # output tokens",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "IMDB - # trials",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "CivilComments - # eval",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "CivilComments - # train",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "CivilComments - truncated",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "CivilComments - # prompt tokens",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "CivilComments - # output tokens",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "CivilComments - # trials",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "RAFT - # eval",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\n# eval: Number of evaluation instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# eval",
+          "run_group": "RAFT"
+        }
+      },
+      {
+        "value": "RAFT - # train",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\n# train: Number of training instances (e.g., in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "# train",
+          "run_group": "RAFT"
+        }
+      },
+      {
+        "value": "RAFT - truncated",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\ntruncated: Fraction of instances where the prompt itself was truncated (implies that there were no in-context examples).",
+        "markdown": false,
+        "metadata": {
+          "metric": "truncated",
+          "run_group": "RAFT"
+        }
+      },
+      {
+        "value": "RAFT - # prompt tokens",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\n# prompt tokens: Number of tokens in the prompt.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# prompt tokens",
+          "run_group": "RAFT"
+        }
+      },
+      {
+        "value": "RAFT - # output tokens",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\n# output tokens: Actual number of output tokens.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# output tokens",
+          "run_group": "RAFT"
+        }
+      },
+      {
+        "value": "RAFT - # trials",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\n# trials: Number of trials, where in each trial we choose an independent, random set of training instances.",
+        "markdown": false,
+        "metadata": {
+          "metric": "# trials",
+          "run_group": "RAFT"
+        }
+      }
+    ],
+    "rows": [
+      [
+        {
+          "value": "GPT-NeoX (20B)",
+          "description": "",
+          "markdown": false
+        },
+        {
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "value": 518.0,
+          "description": "min=518, mean=518, max=518, sum=518 (1)",
+          "style": {},
+          "markdown": false
+        },
+        {
+          "value": 4.996138996138996,
+          "description": "min=4.996, mean=4.996, max=4.996, sum=4.996 (1)",
+          "style": {},
+          "markdown": false
+        },
+        {
+          "value": 0.0,
+          "description": "min=0, mean=0, max=0, sum=0 (1)",
+          "style": {},
+          "markdown": false
+        },
+        {
+          "value": 1574.142857142857,
+          "description": "min=1574.143, mean=1574.143, max=1574.143, sum=1574.143 (1)",
+          "style": {},
+          "markdown": false
+        },
+        {
+          "value": 1.0,
+          "description": "min=1, mean=1, max=1, sum=1 (1)",
+          "style": {},
+          "markdown": false
+        },
+        {
+          "value": 1.0,
+          "description": "min=1, mean=1, max=1, sum=1 (1)",
+          "style": {},
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        }
+      ]
+    ],
+    "links": [
+      {
+        "text": "LaTeX",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/latex/core_scenarios_general_information.tex"
+      },
+      {
+        "text": "JSON",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/json/core_scenarios_general_information.json"
+      }
+    ],
+    "name": "general_information"
+  },
+  {
+    "title": "Bias",
+    "header": [
+      {
+        "value": "Model/adapter",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Mean win rate",
+        "description": "How many models this model outperform on average (over columns).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {}
+      },
+      {
+        "value": "BoolQ - Stereotypes (race)",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\nStereotypical associations (race, profession): Measures uneven association of racial groups (Asian, Hispanic, White) with target professions. This measurement is based on cooccurence statistics between the racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (race)",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "BoolQ - Stereotypes (gender)",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\nStereotypical associations (gender, profession): Measures uneven association of gender groups (male, female) with target professions. This measurement is based on cooccurence statistics between the gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (gender)",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "BoolQ - Representation (race)",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\nDemographic representation (race): Measures uneven representation of racial groups (Asian, Hispanic, White). This measurement is based on disparities in the frequency statistics across racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (race)",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "BoolQ - Representation (gender)",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\nDemographic representation (gender): Measures uneven representation of gender groups (male, female). This measurement is based on disparities in the frequency statistics across gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (gender)",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "NarrativeQA - Stereotypes (race)",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\nStereotypical associations (race, profession): Measures uneven association of racial groups (Asian, Hispanic, White) with target professions. This measurement is based on cooccurence statistics between the racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (race)",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NarrativeQA - Stereotypes (gender)",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\nStereotypical associations (gender, profession): Measures uneven association of gender groups (male, female) with target professions. This measurement is based on cooccurence statistics between the gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (gender)",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NarrativeQA - Representation (race)",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\nDemographic representation (race): Measures uneven representation of racial groups (Asian, Hispanic, White). This measurement is based on disparities in the frequency statistics across racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (race)",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NarrativeQA - Representation (gender)",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\nDemographic representation (gender): Measures uneven representation of gender groups (male, female). This measurement is based on disparities in the frequency statistics across gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (gender)",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - Stereotypes (race)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\nStereotypical associations (race, profession): Measures uneven association of racial groups (Asian, Hispanic, White) with target professions. This measurement is based on cooccurence statistics between the racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (race)",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - Stereotypes (gender)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\nStereotypical associations (gender, profession): Measures uneven association of gender groups (male, female) with target professions. This measurement is based on cooccurence statistics between the gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (gender)",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - Representation (race)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\nDemographic representation (race): Measures uneven representation of racial groups (Asian, Hispanic, White). This measurement is based on disparities in the frequency statistics across racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (race)",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - Representation (gender)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\nDemographic representation (gender): Measures uneven representation of gender groups (male, female). This measurement is based on disparities in the frequency statistics across gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (gender)",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - Stereotypes (race)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\nStereotypical associations (race, profession): Measures uneven association of racial groups (Asian, Hispanic, White) with target professions. This measurement is based on cooccurence statistics between the racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (race)",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - Stereotypes (gender)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\nStereotypical associations (gender, profession): Measures uneven association of gender groups (male, female) with target professions. This measurement is based on cooccurence statistics between the gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (gender)",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - Representation (race)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\nDemographic representation (race): Measures uneven representation of racial groups (Asian, Hispanic, White). This measurement is based on disparities in the frequency statistics across racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (race)",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - Representation (gender)",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\nDemographic representation (gender): Measures uneven representation of gender groups (male, female). This measurement is based on disparities in the frequency statistics across gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (gender)",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "QuAC - Stereotypes (race)",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\nStereotypical associations (race, profession): Measures uneven association of racial groups (Asian, Hispanic, White) with target professions. This measurement is based on cooccurence statistics between the racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (race)",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "QuAC - Stereotypes (gender)",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\nStereotypical associations (gender, profession): Measures uneven association of gender groups (male, female) with target professions. This measurement is based on cooccurence statistics between the gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (gender)",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "QuAC - Representation (race)",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\nDemographic representation (race): Measures uneven representation of racial groups (Asian, Hispanic, White). This measurement is based on disparities in the frequency statistics across racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (race)",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "QuAC - Representation (gender)",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\nDemographic representation (gender): Measures uneven representation of gender groups (male, female). This measurement is based on disparities in the frequency statistics across gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (gender)",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - Stereotypes (race)",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\nStereotypical associations (race, profession): Measures uneven association of racial groups (Asian, Hispanic, White) with target professions. This measurement is based on cooccurence statistics between the racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (race)",
+          "run_group": "MS MARCO (regular)"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - Stereotypes (gender)",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\nStereotypical associations (gender, profession): Measures uneven association of gender groups (male, female) with target professions. This measurement is based on cooccurence statistics between the gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (gender)",
+          "run_group": "MS MARCO (regular)"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - Representation (race)",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\nDemographic representation (race): Measures uneven representation of racial groups (Asian, Hispanic, White). This measurement is based on disparities in the frequency statistics across racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (race)",
+          "run_group": "MS MARCO (regular)"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - Representation (gender)",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\nDemographic representation (gender): Measures uneven representation of gender groups (male, female). This measurement is based on disparities in the frequency statistics across gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (gender)",
+          "run_group": "MS MARCO (regular)"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - Stereotypes (race)",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\nStereotypical associations (race, profession): Measures uneven association of racial groups (Asian, Hispanic, White) with target professions. This measurement is based on cooccurence statistics between the racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (race)",
+          "run_group": "MS MARCO (TREC)"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - Stereotypes (gender)",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\nStereotypical associations (gender, profession): Measures uneven association of gender groups (male, female) with target professions. This measurement is based on cooccurence statistics between the gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (gender)",
+          "run_group": "MS MARCO (TREC)"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - Representation (race)",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\nDemographic representation (race): Measures uneven representation of racial groups (Asian, Hispanic, White). This measurement is based on disparities in the frequency statistics across racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (race)",
+          "run_group": "MS MARCO (TREC)"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - Representation (gender)",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\nDemographic representation (gender): Measures uneven representation of gender groups (male, female). This measurement is based on disparities in the frequency statistics across gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (gender)",
+          "run_group": "MS MARCO (TREC)"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - Stereotypes (race)",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nStereotypical associations (race, profession): Measures uneven association of racial groups (Asian, Hispanic, White) with target professions. This measurement is based on cooccurence statistics between the racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (race)",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - Stereotypes (gender)",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nStereotypical associations (gender, profession): Measures uneven association of gender groups (male, female) with target professions. This measurement is based on cooccurence statistics between the gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (gender)",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - Representation (race)",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nDemographic representation (race): Measures uneven representation of racial groups (Asian, Hispanic, White). This measurement is based on disparities in the frequency statistics across racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (race)",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - Representation (gender)",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nDemographic representation (gender): Measures uneven representation of gender groups (male, female). This measurement is based on disparities in the frequency statistics across gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (gender)",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "XSUM - Stereotypes (race)",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nStereotypical associations (race, profession): Measures uneven association of racial groups (Asian, Hispanic, White) with target professions. This measurement is based on cooccurence statistics between the racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (race)",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - Stereotypes (gender)",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nStereotypical associations (gender, profession): Measures uneven association of gender groups (male, female) with target professions. This measurement is based on cooccurence statistics between the gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (gender)",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - Representation (race)",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nDemographic representation (race): Measures uneven representation of racial groups (Asian, Hispanic, White). This measurement is based on disparities in the frequency statistics across racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (race)",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - Representation (gender)",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nDemographic representation (gender): Measures uneven representation of gender groups (male, female). This measurement is based on disparities in the frequency statistics across gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (gender)",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "IMDB - Stereotypes (race)",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\nStereotypical associations (race, profession): Measures uneven association of racial groups (Asian, Hispanic, White) with target professions. This measurement is based on cooccurence statistics between the racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (race)",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "IMDB - Stereotypes (gender)",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\nStereotypical associations (gender, profession): Measures uneven association of gender groups (male, female) with target professions. This measurement is based on cooccurence statistics between the gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (gender)",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "IMDB - Representation (race)",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\nDemographic representation (race): Measures uneven representation of racial groups (Asian, Hispanic, White). This measurement is based on disparities in the frequency statistics across racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (race)",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "IMDB - Representation (gender)",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\nDemographic representation (gender): Measures uneven representation of gender groups (male, female). This measurement is based on disparities in the frequency statistics across gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (gender)",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "CivilComments - Stereotypes (race)",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\nStereotypical associations (race, profession): Measures uneven association of racial groups (Asian, Hispanic, White) with target professions. This measurement is based on cooccurence statistics between the racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (race)",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "CivilComments - Stereotypes (gender)",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\nStereotypical associations (gender, profession): Measures uneven association of gender groups (male, female) with target professions. This measurement is based on cooccurence statistics between the gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (gender)",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "CivilComments - Representation (race)",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\nDemographic representation (race): Measures uneven representation of racial groups (Asian, Hispanic, White). This measurement is based on disparities in the frequency statistics across racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (race)",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "CivilComments - Representation (gender)",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\nDemographic representation (gender): Measures uneven representation of gender groups (male, female). This measurement is based on disparities in the frequency statistics across gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (gender)",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "RAFT - Stereotypes (race)",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\nStereotypical associations (race, profession): Measures uneven association of racial groups (Asian, Hispanic, White) with target professions. This measurement is based on cooccurence statistics between the racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (race)",
+          "run_group": "RAFT"
+        }
+      },
+      {
+        "value": "RAFT - Stereotypes (gender)",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\nStereotypical associations (gender, profession): Measures uneven association of gender groups (male, female) with target professions. This measurement is based on cooccurence statistics between the gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)) and the target professions (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Stereotypes (gender)",
+          "run_group": "RAFT"
+        }
+      },
+      {
+        "value": "RAFT - Representation (race)",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\nDemographic representation (race): Measures uneven representation of racial groups (Asian, Hispanic, White). This measurement is based on disparities in the frequency statistics across racially-associated names (word list from [Garg et al., 2018](https://www.pnas.org/doi/10.1073/pnas.1720347115); race associations based on US Census statistics).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (race)",
+          "run_group": "RAFT"
+        }
+      },
+      {
+        "value": "RAFT - Representation (gender)",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\nDemographic representation (gender): Measures uneven representation of gender groups (male, female). This measurement is based on disparities in the frequency statistics across gender terms (word list from [Bolukbasi et al., 2016](https://papers.nips.cc/paper/2016/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html)).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Representation (gender)",
+          "run_group": "RAFT"
+        }
+      }
+    ],
+    "rows": [
+      [
+        {
+          "value": "GPT-NeoX (20B)",
+          "description": "",
+          "markdown": false
+        },
+        {
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "value": 0.6666666666666667,
+          "description": "min=0.667, mean=0.667, max=0.667, sum=0.667 (1)",
+          "style": {
+            "font-weight": "bold"
+          },
+          "markdown": false
+        },
+        {
+          "value": 0.46481481481481485,
+          "description": "min=0.465, mean=0.465, max=0.465, sum=0.465 (1)",
+          "style": {
+            "font-weight": "bold"
+          },
+          "markdown": false
+        },
+        {
+          "value": 0.607843137254902,
+          "description": "min=0.608, mean=0.608, max=0.608, sum=0.608 (1)",
+          "style": {
+            "font-weight": "bold"
+          },
+          "markdown": false
+        },
+        {
+          "value": 0.2222222222222222,
+          "description": "min=0.222, mean=0.222, max=0.222, sum=0.222 (1)",
+          "style": {
+            "font-weight": "bold"
+          },
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        }
+      ]
+    ],
+    "links": [
+      {
+        "text": "LaTeX",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/latex/core_scenarios_bias.tex"
+      },
+      {
+        "text": "JSON",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/json/core_scenarios_bias.json"
+      }
+    ],
+    "name": "bias"
+  },
+  {
+    "title": "Toxicity",
+    "header": [
+      {
+        "value": "Model/adapter",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Mean win rate",
+        "description": "How many models this model outperform on average (over columns).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {}
+      },
+      {
+        "value": "BoolQ - Toxic fraction",
+        "description": "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).\n\nToxic fraction: Fraction of model outputs that are toxic (based on the PerspectiveAPI toxicity classifier).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Toxic fraction",
+          "run_group": "BoolQ"
+        }
+      },
+      {
+        "value": "NarrativeQA - Toxic fraction",
+        "description": "The NarrativeQA benchmark for reading comprehension over narratives [(Ko\u010disk\u00fd et al., 2017)](https://aclanthology.org/Q18-1023/).\n\nToxic fraction: Fraction of model outputs that are toxic (based on the PerspectiveAPI toxicity classifier).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Toxic fraction",
+          "run_group": "NarrativeQA"
+        }
+      },
+      {
+        "value": "NaturalQuestions (closed-book) - Toxic fraction",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input does not include the Wikipedia page with the answer.\n\nToxic fraction: Fraction of model outputs that are toxic (based on the PerspectiveAPI toxicity classifier).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Toxic fraction",
+          "run_group": "NaturalQuestions (closed-book)"
+        }
+      },
+      {
+        "value": "NaturalQuestions (open-book) - Toxic fraction",
+        "description": "The NaturalQuestions [(Kwiatkowski et al., 2019)](https://aclanthology.org/Q19-1026/) benchmark for question answering based on naturally-occurring queries through Google Search. The input includes the Wikipedia page with the answer.\n\nToxic fraction: Fraction of model outputs that are toxic (based on the PerspectiveAPI toxicity classifier).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Toxic fraction",
+          "run_group": "NaturalQuestions (open-book)"
+        }
+      },
+      {
+        "value": "QuAC - Toxic fraction",
+        "description": "The QuAC benchmark for question answering in the context of dialogues [(Choi et al., 2018)](https://aclanthology.org/D18-1241/).\n\nToxic fraction: Fraction of model outputs that are toxic (based on the PerspectiveAPI toxicity classifier).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Toxic fraction",
+          "run_group": "QuAC"
+        }
+      },
+      {
+        "value": "MS MARCO (regular) - Toxic fraction",
+        "description": "The MS MARCO benchmark's regular track for passage retrieval in information retrieval [(https://microsoft.github.io/msmarco/)](https://microsoft.github.io/msmarco/).\n\nToxic fraction: Fraction of model outputs that are toxic (based on the PerspectiveAPI toxicity classifier).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Toxic fraction",
+          "run_group": "MS MARCO (regular)"
+        }
+      },
+      {
+        "value": "MS MARCO (TREC) - Toxic fraction",
+        "description": "The MS MARCO benchmark's deep learning TREC track for passage retrieval in information retrieval [(https://trec.nist.gov)](https://microsoft.github.io/msmarco/).\n\nToxic fraction: Fraction of model outputs that are toxic (based on the PerspectiveAPI toxicity classifier).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Toxic fraction",
+          "run_group": "MS MARCO (TREC)"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - Toxic fraction",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nToxic fraction: Fraction of model outputs that are toxic (based on the PerspectiveAPI toxicity classifier).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Toxic fraction",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "XSUM - Toxic fraction",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nToxic fraction: Fraction of model outputs that are toxic (based on the PerspectiveAPI toxicity classifier).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Toxic fraction",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "IMDB - Toxic fraction",
+        "description": "The IMDB benchmark for sentiment analysis in movie review [(Maas et al., 2011)](https://aclanthology.org/P11-1015/).\n\nToxic fraction: Fraction of model outputs that are toxic (based on the PerspectiveAPI toxicity classifier).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Toxic fraction",
+          "run_group": "IMDB"
+        }
+      },
+      {
+        "value": "CivilComments - Toxic fraction",
+        "description": "The CivilComments benchmark for toxicity detection [(Borkan et al., 2019)](https://arxiv.org/pdf/1903.04561.pdf).\n\nToxic fraction: Fraction of model outputs that are toxic (based on the PerspectiveAPI toxicity classifier).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Toxic fraction",
+          "run_group": "CivilComments"
+        }
+      },
+      {
+        "value": "RAFT - Toxic fraction",
+        "description": "The Real-world annotated few-shot (RAFT) meta-benchmark of 11 real-world text classification tasks [(Alex et al., 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/ca46c1b9512a7a8315fa3c5a946e8265-Abstract-round2.html).\n\nToxic fraction: Fraction of model outputs that are toxic (based on the PerspectiveAPI toxicity classifier).",
+        "markdown": false,
+        "lower_is_better": true,
+        "metadata": {
+          "metric": "Toxic fraction",
+          "run_group": "RAFT"
+        }
+      }
+    ],
+    "rows": [
+      [
+        {
+          "value": "GPT-NeoX (20B)",
+          "description": "",
+          "markdown": false
+        },
+        {
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "1 matching runs, but no matching metrics",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        }
+      ]
+    ],
+    "links": [
+      {
+        "text": "LaTeX",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/latex/core_scenarios_toxicity.tex"
+      },
+      {
+        "text": "JSON",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/json/core_scenarios_toxicity.json"
+      }
+    ],
+    "name": "toxicity"
+  },
+  {
+    "title": "Summarization metrics",
+    "header": [
+      {
+        "value": "Model/adapter",
+        "markdown": false,
+        "metadata": {}
+      },
+      {
+        "value": "Mean win rate",
+        "description": "How many models this model outperform on average (over columns).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {}
+      },
+      {
+        "value": "CNN/DailyMail - SummaC",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nSummaC: Faithfulness scores based on the SummaC method of [Laban et al. (2022)](https://aclanthology.org/2022.tacl-1.10/).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "SummaC",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - QAFactEval",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nQAFactEval: Faithfulness scores based on the SummaC method of [Laban et al. (2022)](https://aclanthology.org/2022.tacl-1.10/).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "QAFactEval",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - BERTScore (F1)",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nBERTScore (F1): Average BERTScore F1 [(Zhang et al., 2020)](https://openreview.net/pdf?id=SkeHuCVFDr) between model generation and reference summary.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "BERTScore (F1)",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - Coverage",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nCoverage: Extent to which the model-generated summaries are extractive fragments from the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+        "markdown": false,
+        "metadata": {
+          "metric": "Coverage",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - Density",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nDensity: Extent to which the model-generated summaries are extractive summaries based on the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+        "markdown": false,
+        "metadata": {
+          "metric": "Density",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - Compression",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nCompression: Extent to which the model-generated summaries are compressed relative to the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+        "markdown": false,
+        "metadata": {
+          "metric": "Compression",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - HumanEval-faithfulness",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nHumanEval-faithfulness: Human evaluation score for faithfulness.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "HumanEval-faithfulness",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - HumanEval-relevance",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nHumanEval-relevance: Human evaluation score for relevance.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "HumanEval-relevance",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "CNN/DailyMail - HumanEval-coherence",
+        "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nHumanEval-coherence: Human evaluation score for coherence.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "HumanEval-coherence",
+          "run_group": "CNN/DailyMail"
+        }
+      },
+      {
+        "value": "XSUM - SummaC",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nSummaC: Faithfulness scores based on the SummaC method of [Laban et al. (2022)](https://aclanthology.org/2022.tacl-1.10/).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "SummaC",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - QAFactEval",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nQAFactEval: Faithfulness scores based on the SummaC method of [Laban et al. (2022)](https://aclanthology.org/2022.tacl-1.10/).",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "QAFactEval",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - BERTScore (F1)",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nBERTScore (F1): Average BERTScore F1 [(Zhang et al., 2020)](https://openreview.net/pdf?id=SkeHuCVFDr) between model generation and reference summary.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "BERTScore (F1)",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - Coverage",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nCoverage: Extent to which the model-generated summaries are extractive fragments from the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+        "markdown": false,
+        "metadata": {
+          "metric": "Coverage",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - Density",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nDensity: Extent to which the model-generated summaries are extractive summaries based on the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+        "markdown": false,
+        "metadata": {
+          "metric": "Density",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - Compression",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nCompression: Extent to which the model-generated summaries are compressed relative to the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+        "markdown": false,
+        "metadata": {
+          "metric": "Compression",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - HumanEval-faithfulness",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nHumanEval-faithfulness: Human evaluation score for faithfulness.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "HumanEval-faithfulness",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - HumanEval-relevance",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nHumanEval-relevance: Human evaluation score for relevance.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "HumanEval-relevance",
+          "run_group": "XSUM"
+        }
+      },
+      {
+        "value": "XSUM - HumanEval-coherence",
+        "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nHumanEval-coherence: Human evaluation score for coherence.",
+        "markdown": false,
+        "lower_is_better": false,
+        "metadata": {
+          "metric": "HumanEval-coherence",
+          "run_group": "XSUM"
+        }
+      }
+    ],
+    "rows": [
+      [
+        {
+          "value": "GPT-NeoX (20B)",
+          "description": "",
+          "markdown": false
+        },
+        {
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "No matching runs",
+          "markdown": false
+        },
+        {
+          "description": "1 matching runs, but no matching metrics",
+          "markdown": false
+        },
+        {
+          "value": 4.344677845637004,
+          "description": "min=4.345, mean=4.345, max=4.345, sum=4.345 (1)",
+          "style": {
+            "font-weight": "bold"
+          },
+          "markdown": false
+        },
+        {
+          "description": "1 matching runs, but no matching metrics",
+          "markdown": false
+        },
+        {
+          "value": 0.643974147624051,
+          "description": "min=0.644, mean=0.644, max=0.644, sum=0.644 (1)",
+          "style": {},
+          "markdown": false
+        },
+        {
+          "value": 1.5853534380665077,
+          "description": "min=1.585, mean=1.585, max=1.585, sum=1.585 (1)",
+          "style": {},
+          "markdown": false
+        },
+        {
+          "value": 13.481670582112898,
+          "description": "min=13.482, mean=13.482, max=13.482, sum=13.482 (1)",
+          "style": {},
+          "markdown": false
+        },
+        {
+          "description": "1 matching runs, but no matching metrics",
+          "markdown": false
+        },
+        {
+          "description": "1 matching runs, but no matching metrics",
+          "markdown": false
+        },
+        {
+          "description": "1 matching runs, but no matching metrics",
+          "markdown": false
+        }
+      ]
+    ],
+    "links": [
+      {
+        "text": "LaTeX",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/latex/core_scenarios_summarization_metrics.tex"
+      },
+      {
+        "text": "JSON",
+        "href": "benchmark_output/runs/xsum-llama_h2o0.2-test/groups/json/core_scenarios_summarization_metrics.json"
+      }
+    ],
+    "name": "summarization_metrics"
+  }
+]

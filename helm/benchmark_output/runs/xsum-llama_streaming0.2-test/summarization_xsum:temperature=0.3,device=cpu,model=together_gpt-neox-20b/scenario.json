@@ -1,0 +1,9 @@
+{
+  "name": "summarization",
+  "description": "Scenario for summarization tasks",
+  "tags": [
+    "summarization"
+  ],
+  "output_path": "benchmark_output/scenarios/summarization",
+  "definition_path": "/data_train/infra/yxk/miniconda3/envs/h2o/lib/python3.8/site-packages/helm/benchmark/scenarios/summarization_scenario.py"
+}

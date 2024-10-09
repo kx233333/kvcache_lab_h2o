@@ -1,0 +1,296 @@
+{
+  "title": "Summarization metrics",
+  "header": [
+    {
+      "value": "Model/adapter",
+      "markdown": false,
+      "metadata": {}
+    },
+    {
+      "value": "Mean win rate",
+      "description": "How many models this model outperform on average (over columns).",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {}
+    },
+    {
+      "value": "CNN/DailyMail - SummaC",
+      "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nSummaC: Faithfulness scores based on the SummaC method of [Laban et al. (2022)](https://aclanthology.org/2022.tacl-1.10/).",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "SummaC",
+        "run_group": "CNN/DailyMail"
+      }
+    },
+    {
+      "value": "CNN/DailyMail - QAFactEval",
+      "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nQAFactEval: Faithfulness scores based on the SummaC method of [Laban et al. (2022)](https://aclanthology.org/2022.tacl-1.10/).",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "QAFactEval",
+        "run_group": "CNN/DailyMail"
+      }
+    },
+    {
+      "value": "CNN/DailyMail - BERTScore (F1)",
+      "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nBERTScore (F1): Average BERTScore F1 [(Zhang et al., 2020)](https://openreview.net/pdf?id=SkeHuCVFDr) between model generation and reference summary.",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "BERTScore (F1)",
+        "run_group": "CNN/DailyMail"
+      }
+    },
+    {
+      "value": "CNN/DailyMail - Coverage",
+      "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nCoverage: Extent to which the model-generated summaries are extractive fragments from the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+      "markdown": false,
+      "metadata": {
+        "metric": "Coverage",
+        "run_group": "CNN/DailyMail"
+      }
+    },
+    {
+      "value": "CNN/DailyMail - Density",
+      "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nDensity: Extent to which the model-generated summaries are extractive summaries based on the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+      "markdown": false,
+      "metadata": {
+        "metric": "Density",
+        "run_group": "CNN/DailyMail"
+      }
+    },
+    {
+      "value": "CNN/DailyMail - Compression",
+      "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nCompression: Extent to which the model-generated summaries are compressed relative to the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+      "markdown": false,
+      "metadata": {
+        "metric": "Compression",
+        "run_group": "CNN/DailyMail"
+      }
+    },
+    {
+      "value": "CNN/DailyMail - HumanEval-faithfulness",
+      "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nHumanEval-faithfulness: Human evaluation score for faithfulness.",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "HumanEval-faithfulness",
+        "run_group": "CNN/DailyMail"
+      }
+    },
+    {
+      "value": "CNN/DailyMail - HumanEval-relevance",
+      "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nHumanEval-relevance: Human evaluation score for relevance.",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "HumanEval-relevance",
+        "run_group": "CNN/DailyMail"
+      }
+    },
+    {
+      "value": "CNN/DailyMail - HumanEval-coherence",
+      "description": "The CNN/DailyMail benchmark for text summarization ([Hermann et al., 2015](https://papers.nips.cc/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html); [Nallapati et al.,2016](https://aclanthology.org/K16-1028/)).\n\nHumanEval-coherence: Human evaluation score for coherence.",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "HumanEval-coherence",
+        "run_group": "CNN/DailyMail"
+      }
+    },
+    {
+      "value": "XSUM - SummaC",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nSummaC: Faithfulness scores based on the SummaC method of [Laban et al. (2022)](https://aclanthology.org/2022.tacl-1.10/).",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "SummaC",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "XSUM - QAFactEval",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nQAFactEval: Faithfulness scores based on the SummaC method of [Laban et al. (2022)](https://aclanthology.org/2022.tacl-1.10/).",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "QAFactEval",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "XSUM - BERTScore (F1)",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nBERTScore (F1): Average BERTScore F1 [(Zhang et al., 2020)](https://openreview.net/pdf?id=SkeHuCVFDr) between model generation and reference summary.",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "BERTScore (F1)",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "XSUM - Coverage",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nCoverage: Extent to which the model-generated summaries are extractive fragments from the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+      "markdown": false,
+      "metadata": {
+        "metric": "Coverage",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "XSUM - Density",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nDensity: Extent to which the model-generated summaries are extractive summaries based on the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+      "markdown": false,
+      "metadata": {
+        "metric": "Density",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "XSUM - Compression",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nCompression: Extent to which the model-generated summaries are compressed relative to the source document [(Grusky et al., 2018)](https://aclanthology.org/N18-1065/).",
+      "markdown": false,
+      "metadata": {
+        "metric": "Compression",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "XSUM - HumanEval-faithfulness",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nHumanEval-faithfulness: Human evaluation score for faithfulness.",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "HumanEval-faithfulness",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "XSUM - HumanEval-relevance",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nHumanEval-relevance: Human evaluation score for relevance.",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "HumanEval-relevance",
+        "run_group": "XSUM"
+      }
+    },
+    {
+      "value": "XSUM - HumanEval-coherence",
+      "description": "The XSUM benchmark for text summarization of BBC news articles [(Narayan et al., 2018)](https://aclanthology.org/D18-1206/).\n\nHumanEval-coherence: Human evaluation score for coherence.",
+      "markdown": false,
+      "lower_is_better": false,
+      "metadata": {
+        "metric": "HumanEval-coherence",
+        "run_group": "XSUM"
+      }
+    }
+  ],
+  "rows": [
+    [
+      {
+        "value": "GPT-NeoX (20B)",
+        "description": "",
+        "markdown": false
+      },
+      {
+        "markdown": false
+      },
+      {
+        "description": "No matching runs",
+        "markdown": false
+      },
+      {
+        "description": "No matching runs",
+        "markdown": false
+      },
+      {
+        "description": "No matching runs",
+        "markdown": false
+      },
+      {
+        "description": "No matching runs",
+        "markdown": false
+      },
+      {
+        "description": "No matching runs",
+        "markdown": false
+      },
+      {
+        "description": "No matching runs",
+        "markdown": false
+      },
+      {
+        "description": "No matching runs",
+        "markdown": false
+      },
+      {
+        "description": "No matching runs",
+        "markdown": false
+      },
+      {
+        "description": "No matching runs",
+        "markdown": false
+      },
+      {
+        "description": "1 matching runs, but no matching metrics",
+        "markdown": false
+      },
+      {
+        "value": 4.559661149978638,
+        "description": "min=4.56, mean=4.56, max=4.56, sum=4.56 (1)",
+        "style": {
+          "font-weight": "bold"
+        },
+        "markdown": false
+      },
+      {
+        "description": "1 matching runs, but no matching metrics",
+        "markdown": false
+      },
+      {
+        "value": 0.7123119893944874,
+        "description": "min=0.712, mean=0.712, max=0.712, sum=0.712 (1)",
+        "style": {},
+        "markdown": false
+      },
+      {
+        "value": 2.813702887761816,
+        "description": "min=2.814, mean=2.814, max=2.814, sum=2.814 (1)",
+        "style": {},
+        "markdown": false
+      },
+      {
+        "value": 14.879250413711285,
+        "description": "min=14.879, mean=14.879, max=14.879, sum=14.879 (1)",
+        "style": {},
+        "markdown": false
+      },
+      {
+        "description": "1 matching runs, but no matching metrics",
+        "markdown": false
+      },
+      {
+        "description": "1 matching runs, but no matching metrics",
+        "markdown": false
+      },
+      {
+        "description": "1 matching runs, but no matching metrics",
+        "markdown": false
+      }
+    ]
+  ],
+  "links": [
+    {
+      "text": "LaTeX",
+      "href": "benchmark_output/runs/xsum-llama_streaming0.2-test/groups/latex/summarization_summarization_metrics.tex"
+    },
+    {
+      "text": "JSON",
+      "href": "benchmark_output/runs/xsum-llama_streaming0.2-test/groups/json/summarization_summarization_metrics.json"
+    }
+  ],
+  "name": "summarization_metrics"
+}

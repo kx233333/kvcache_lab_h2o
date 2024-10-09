@@ -1,0 +1,114 @@
+{
+  "name": "summarization_xsum:temperature=0.3,device=cpu,model=together_gpt-neox-20b",
+  "scenario_spec": {
+    "class_name": "helm.benchmark.scenarios.summarization_scenario.SummarizationScenario",
+    "args": {
+      "dataset_name": "xsum-sampled",
+      "sampling_min_length": 50,
+      "sampling_max_length": 150,
+      "doc_max_length": 512
+    }
+  },
+  "adapter_spec": {
+    "method": "generation",
+    "global_prefix": "",
+    "instructions": "",
+    "input_prefix": "###\nArticle: ",
+    "input_suffix": "\n\n",
+    "reference_prefix": "A. ",
+    "reference_suffix": "\n",
+    "output_prefix": "Summarize the above article in 1 sentence.\n",
+    "output_suffix": "\n",
+    "instance_prefix": "\n",
+    "substitutions": [],
+    "max_train_instances": 5,
+    "max_eval_instances": 1000,
+    "num_outputs": 1,
+    "num_train_trials": 1,
+    "sample_train": true,
+    "model": "together/gpt-neox-20b",
+    "temperature": 0.3,
+    "max_tokens": 64,
+    "stop_sequences": [
+      "###"
+    ]
+  },
+  "metric_specs": [
+    {
+      "class_name": "helm.benchmark.summarization_metrics.SummarizationMetric",
+      "args": {
+        "task": "summarization_xsum_sampled",
+        "device": "cpu"
+      }
+    },
+    {
+      "class_name": "helm.benchmark.basic_metrics.BasicMetric",
+      "args": {
+        "names": []
+      }
+    },
+    {
+      "class_name": "helm.benchmark.bias_metrics.BiasMetric",
+      "args": {
+        "mode": "associations",
+        "demographic_category": "race",
+        "target_category": "adjective"
+      }
+    },
+    {
+      "class_name": "helm.benchmark.bias_metrics.BiasMetric",
+      "args": {
+        "mode": "associations",
+        "demographic_category": "race",
+        "target_category": "profession"
+      }
+    },
+    {
+      "class_name": "helm.benchmark.bias_metrics.BiasMetric",
+      "args": {
+        "mode": "associations",
+        "demographic_category": "gender",
+        "target_category": "adjective"
+      }
+    },
+    {
+      "class_name": "helm.benchmark.bias_metrics.BiasMetric",
+      "args": {
+        "mode": "associations",
+        "demographic_category": "gender",
+        "target_category": "profession"
+      }
+    },
+    {
+      "class_name": "helm.benchmark.bias_metrics.BiasMetric",
+      "args": {
+        "mode": "representation",
+        "demographic_category": "race"
+      }
+    },
+    {
+      "class_name": "helm.benchmark.bias_metrics.BiasMetric",
+      "args": {
+        "mode": "representation",
+        "demographic_category": "gender"
+      }
+    },
+    {
+      "class_name": "helm.benchmark.toxicity_metrics.ToxicityMetric",
+      "args": {}
+    }
+  ],
+  "data_augmenter_spec": {
+    "perturbation_specs": [],
+    "should_augment_train_instances": false,
+    "should_include_original_train": false,
+    "should_skip_unchanged_train": false,
+    "should_augment_eval_instances": false,
+    "should_include_original_eval": false,
+    "should_skip_unchanged_eval": false,
+    "seeds_per_instance": 1
+  },
+  "groups": [
+    "summarization_xsum"
+  ]
+}
